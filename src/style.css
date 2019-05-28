@@ -1,0 +1,12 @@
+.box {
+  height: 70vh;
+  width: 60%;
+}
+
+.bg-img {
+  background-image: url("./img/academy-celebration.jpg");
+}
+
+.icons-home {
+  font-size: 5em;
+}
