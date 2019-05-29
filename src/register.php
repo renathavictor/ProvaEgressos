@@ -13,6 +13,7 @@ if ($logged) {
 // registrar usuario
 if (isset($_POST['submit'])) {
   $errorMessage = "";
+  $sucessMessage = "";
 
   $name = $_POST['name'];
   $email = $_POST['email'];
@@ -51,8 +52,11 @@ if (isset($_POST['submit'])) {
         $_SESSION['email'] = $email;
         $_SESSION['auth'] = true;
     
-        header('Location: home.php');
+        $sucessMessage = "Registro realizado com sucesso.";
+        header("refresh: 5; url=logout.php");
+
         exit;
+/*         header('Location: login.php'); */        
       }
     }
 
@@ -65,13 +69,22 @@ if (isset($_POST['submit'])) {
 <?php include('templates/header.php'); ?>
 <?php include('templates/navbar.php'); ?>
  
-<div class="container p-5 mt-5 bg-white">
+<div class="container p-5 box border shadow  mt-5 bg-white rounded">
   <h1 class="col-md-6 offset-md-3">Egressos do IFPB</h1>
   <?php
     if(isset($errorMessage)){
       echo '
       <div class="alert alert-danger" role="alert" alert-dismissible fade show>
         '.$errorMessage.'
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>';
+    }
+    if(isset($sucessMessage)){
+      echo '
+      <div class="alert alert-sucess" role="alert" alert-dismissible fade show>
+        '.$sucessMessage.'
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>

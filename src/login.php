@@ -2,6 +2,10 @@
 
 include_once 'connect.php';
 
+if ($_SESSION['auth']) {
+  header('Location: home.php');    
+}
+
 if (isset($_POST['submit'])) {
   $errorMessage = "";
 
@@ -50,7 +54,7 @@ if (isset($_POST['submit'])) {
 <?php include('templates/header.php'); ?>
 <?php include('templates/navbar.php'); ?>
 
-<div class="container p-5 mt-5 bg-white box">
+<div class="container border shadow p-5 mt-5 bg-white rounded box">
   <h1 class="col-md-6 offset-md-3 mt-5">Egressos do IFPB</h1>
   <?php
       if(isset($errorMessage)){

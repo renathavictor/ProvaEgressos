@@ -6,6 +6,7 @@
     header('Location: login.php');
     exit;
   }
+
   $id = $_SESSION['id'];
   $name = $_SESSION['name'];
 
@@ -40,14 +41,14 @@
     $statement->bindParam(':id', $id);
 
     $statement->execute();
-    header("Refresh: 0");
+    header("Refresh: 5");
   }
 ?>
 
 <?php include('templates/header.php'); ?>
 <?php include('templates/navbar.php'); ?>
 
-<div class="container mt-5 bg-white box">
+<div class="container border shadow  mt-5 bg-white rounded box">
   <h1 class="mt-5 pb-5">Hello, <?php echo $name; ?>!</h1>
   <div class="row mt-5  text-black-50">
     <div class="col-8">
