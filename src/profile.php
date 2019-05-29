@@ -41,7 +41,8 @@
     $statement->bindParam(':id', $id);
 
     $statement->execute();
-    header("Refresh: 5");
+    //header("Refresh: 5");
+    header('location: profile.php');
   }
 ?>
 

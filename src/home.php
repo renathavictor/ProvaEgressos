@@ -17,7 +17,7 @@
 <div class="container border shadow  mt-5 bg-white rounded box">
   <h1 class="mt-5 pb-5">Hello, <?php echo $name; ?>!</h1>
   <div class="row mt-5  text-black-50">
-    <div class="col-3">
+    <div class="col-3" style="margin-left: 6rem;">
       <a class="list-group-item-action" href="profile.php">
         <div class="card text-center">
           <div class="card-body">

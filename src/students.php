@@ -40,7 +40,7 @@
     <?php 
       foreach ($users as $user) {
         echo "
-          <div class='card bg-light text-white m-3'>
+          <div class='card bg-light text-white m-3' style='width: 15rem;height: 15rem;'>
           <img src='./img/placeholder.jpg' class='card-img' alt='imagem default'>
           <div class='card-img-overlay'>
             <h5 class='card-title'>$user[name]</h5>
@@ -49,7 +49,6 @@
             <div class='card-text'>
               <a class='list-group-item-action text-white' href='$user[linkedin]' alt='link linkedin'><i class='fab fa-linkedin'></i></a>
               <a class='list-group-item-action text-white' href='$user[github]' alt='link github'><i class='fab fa-github'></i></a>
-            
             </div>
           </div>
           </div>
