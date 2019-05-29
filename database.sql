@@ -14,6 +14,17 @@ CREATE TABLE courses (
   campus VARCHAR(30)
 );
 
-INSERT INTO courses (name, campus) VALUES ('Sistemas para Internet', 'ifpb-jp');
 
+/* cursos */
+INSERT INTO courses (name, campus) VALUES ('Sistemas para Internet', 'ifpb-jp');
 INSERT INTO courses (name, campus) VALUES ('Redes de Computadores', 'ifpb-jp');
+
+/* usuarios */
+
+INSERT INTO users (name, email, password) VALUES ('Luiz Carlos Chaves', 'lucachaves@gmail.com', '$2y$10$q0GsV5xZIbuDPyNwFF64tu/JOJuoC2HtFSAL7opEL3AZVARFskVze');
+INSERT INTO users (name, email, password) VALUES ('Aline Donato', 'aline@gmail.com', ' $2y$10$c2yTXOn5ZgalBYvZWFCUkeJZqQqFInsv4AogzmEvnxaApJSOptHEO');
+INSERT INTO users (name, email, password) VALUES ('Alana Morais', 'alana_mm@hotmail.com', ' $2y$10$c2yTXOn5ZgalBYvZWFCUkeJZqQqFInsv4AogzmEvnxaApJSOptHEO');
+INSERT INTO users (name, email, password) VALUES ('Alisson Sena', 'alisson.sena@gmail.com', ' $2y$10$c2yTXOn5ZgalBYvZWFCUkeJZqQqFInsv4AogzmEvnxaApJSOptHEO');
+INSERT INTO users (name, email, password) VALUES ('André Vinagre', 'andrenvinagre@gmail.com', ' $2y$10$c2yTXOn5ZgalBYvZWFCUkeJZqQqFInsv4AogzmEvnxaApJSOptHEO');
+INSERT INTO users (name, email, password) VALUES ('Andreza Vieira', 'andreza_sv@yahoo.com.br', ' $2y$10$c2yTXOn5ZgalBYvZWFCUkeJZqQqFInsv4AogzmEvnxaApJSOptHEO');
+INSERT INTO users (name, email, password) VALUES ('Anna Clara Nobrega', 'acrnobrega@hotmail.com', ' $2y$10$c2yTXOn5ZgalBYvZWFCUkeJZqQqFInsv4AogzmEvnxaApJSOptHEO');
