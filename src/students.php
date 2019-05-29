@@ -41,13 +41,16 @@
       foreach ($users as $user) {
         echo "
           <div class='card bg-light text-white m-3'>
-          <img src='./img/placeholder.jpg' class='card-img' alt='...'>
+          <img src='./img/placeholder.jpg' class='card-img' alt='imagem default'>
           <div class='card-img-overlay'>
             <h5 class='card-title'>$user[name]</h5>
-            <p>$user[email]</p>
-            <p>$user[course]</p>
-            <p>$user[linkedin]</p>
-            <p>$user[github]</p>
+            <p class='card-text'><i class='fas fa-at'></i> $user[email]</p>
+            <p class='card-text'><i class='fas fa-university'></i> $user[course]</p>
+            <div class='card-text'>
+              <a class='list-group-item-action text-white' href='$user[linkedin]' alt='link linkedin'><i class='fab fa-linkedin'></i></a>
+              <a class='list-group-item-action text-white' href='$user[github]' alt='link github'><i class='fab fa-github'></i></a>
+            
+            </div>
           </div>
           </div>
         ";

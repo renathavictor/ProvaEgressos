@@ -13,7 +13,6 @@ if ($logged) {
 // registrar usuario
 if (isset($_POST['submit'])) {
   $errorMessage = "";
-  $sucessMessage = "";
 
   $name = $_POST['name'];
   $email = $_POST['email'];
@@ -52,11 +51,8 @@ if (isset($_POST['submit'])) {
         $_SESSION['email'] = $email;
         $_SESSION['auth'] = true;
     
-        $sucessMessage = "Registro realizado com sucesso.";
-        header("refresh: 5; url=logout.php");
-
+        header('Location: home.php');
         exit;
-/*         header('Location: login.php'); */        
       }
     }
 
@@ -76,15 +72,6 @@ if (isset($_POST['submit'])) {
       echo '
       <div class="alert alert-danger" role="alert" alert-dismissible fade show>
         '.$errorMessage.'
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-      </div>';
-    }
-    if(isset($sucessMessage)){
-      echo '
-      <div class="alert alert-sucess" role="alert" alert-dismissible fade show>
-        '.$sucessMessage.'
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
