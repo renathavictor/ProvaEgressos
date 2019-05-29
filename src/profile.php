@@ -54,6 +54,27 @@
     //header("Refresh: 5");
     header('location: profile.php');
   }
+
+  // add curso
+  if (isset($_POST['submit-course'])) {
+    echo "aqui";
+    $name_course = $_POST['name-course'];
+    $campus = $_POST['campus'];
+    if (!empty($campus) && !empty($name_course)) {
+
+      try {
+        $sql = 'INSERT INTO courses (name, campus) VALUES (:name, :campus)';
+        $statement = $pdo->prepare($sql);
+        $statement->execute(array(
+          ':name' => $name_course,
+          ':campus' => $campus
+        ));
+      } catch (\PDOException $e) {
+        echo $e->getMessage();
+      }
+      exit;
+    }
+  }
 ?>
 
 <?php include('templates/header.php'); ?>

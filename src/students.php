@@ -39,7 +39,28 @@
   <div class="mt-5 d-flex justify-content-around flex-wrap">
     <?php 
       foreach ($users as $user) {
+
+        $link= isset($user['linkedin']) ? "<a class='title-card p-2' href='$user[linkedin]' alt='link linkedin' target='_blanck'><i class='fab fa-linkedin'></i></a>" : " ";
+        $git = isset($user['github']) ? "<a class='title-card p-2' href='$user[github]' alt='link github' target='_blanck'><i class='fab fa-github'></i></a>" : " ";
+      
         echo "
+        <div class='card bg-light text-white m-3' style='width: 15rem;height: 15rem;'>
+        <img src='./img/placeholder.jpg' class='card-img' alt='imagem default'>
+        <div class='card-img-overlay'>
+          <a class='title-card' tabindex='0' role='button' data-toggle='popover' data-trigger='focus' title='$user[name]' data-content='$user[email] | $user[course]'>
+            <h5 class='card-title'>$user[name]</h5>
+          </a>  
+          <div class='card-text'>
+          
+            ".
+            $link . $git .
+            "
+          </div>
+          </div>
+          </div>
+        ";
+
+        $test = "
         <div class='card bg-light text-white m-3' style='width: 15rem;height: 15rem;'>
         <img src='./img/placeholder.jpg' class='card-img' alt='imagem default'>
         <div class='card-img-overlay'>
