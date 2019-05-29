@@ -13,10 +13,10 @@ if (isset($_POST['submit'])) {
   $password = $_POST['password'];
 
   if (empty($email)) {
-    $errorMessage = 'Enter your email';
+    $errorMessage = 'Coloque seu email';
   }
   if (empty($password)){
-    $errorMessage = 'Enter your password';
+    $errorMessage = 'Coloque sua senha';
   }
 
   if ($errorMessage == '') {
@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
       $user = $statement->fetch(PDO::FETCH_ASSOC);
 
       if ($user == false) {
-        $errorMessage = 'Incorrect email or password!';
+        $errorMessage = 'Email e/ou senha incorretos!';
       } else {
         $validPassword = password_verify($password, $user['password']);
         if ($validPassword) {
@@ -42,7 +42,7 @@ if (isset($_POST['submit'])) {
           header('Location: home.php');
           exit;
         } else {
-          $errorMessage = 'Incorrect email or password!';
+          $errorMessage = 'Email e/ou senha incorretos!';
         }
       }
     } catch(PDOException $e) {
@@ -70,13 +70,13 @@ if (isset($_POST['submit'])) {
   <div class="row">
     <form method="post" action="" class="mt-5 col-md-6 offset-md-3">
       <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="email" name="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control" id="email" aria-describedby="email" placeholder="Digite seu email">
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-        <small>Don't have login yet? <a href="register.php">Register here</a></small>
+        <label for="password">Senha</label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="Digite a senha">
+        <small>Não é cadastrado ainda? <a href="register.php">Cadastre-se aqui!</a></small>
       </div>
       <input type="submit" name="submit" value="Login" class="btn btn-success">
     </form>

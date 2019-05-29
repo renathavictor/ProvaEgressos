@@ -20,10 +20,10 @@ if (isset($_POST['submit'])) {
   $confirmPassword = $_POST['confirmPassword'];
   
   if (empty($name) || empty($email) || empty($password) || empty($confirmPassword)) {
-    $errorMessage = 'Fill in all the fields!';
+    $errorMessage = 'Preencha todos os campos!';
   } else {
     if ($password !== $confirmPassword) {
-      $errorMessage = 'Passwords don\'t match!';  
+      $errorMessage = 'As senhas digitadas são diferentes!';  
     } else {
 
       // procura se já tem o email no banco
@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
       $user = $statement->fetch(PDO::FETCH_ASSOC);
 
       if ($user !== false) {
-        $errorMessage = 'Email already exists!';  
+        $errorMessage = 'Email já cadastrado!';  
       } else {
         $sql = 'INSERT INTO users (name, email, password) VALUES (:name, :email, :password)';
     
@@ -81,23 +81,23 @@ if (isset($_POST['submit'])) {
   <div class="row">
     <form method="post" action="" class="mt-5 col-md-6 offset-md-3">
       <div class="form-group">
-        <label for="name">Name</label>
-        <input type="name" name="name" class="form-control" id="name" aria-describedby="name" placeholder="Enter name" require>
+        <label for="name">Nome</label>
+        <input type="name" name="name" class="form-control" id="name" aria-describedby="name" placeholder="Digite seu nome" require>
       </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" name="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email" require>
+        <input type="email" name="email" class="form-control" id="email" aria-describedby="email" placeholder="Digite seu email" require>
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" class="form-control" id="password" placeholder="Password" require>
+        <label for="password">Senha</label>
+        <input type="password" name="password" class="form-control" id="password" placeholder="Digite sua senha" require>
       </div>
       <div class="form-group">
-        <label for="confirmPassword">Confirm password</label>
-        <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirm password" require>
-        <small>Do you have a login already? <a href="login.php">Login here</a></small>
+        <label for="confirmPassword">Confirme senha</label>
+        <input type="password" name="confirmPassword" class="form-control" id="confirmPassword" placeholder="Confirmar a senha" require>
+        <small>Você já é cadastrado? <a href="login.php">Entre aqui</a></small>
       </div>
-      <input type="submit" name="submit" value="Register" class="btn btn-success">
+      <input type="submit" name="submit" value="Registrar" class="btn btn-success">
     </form>
   </div>
 </div>

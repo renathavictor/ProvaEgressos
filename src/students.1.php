@@ -40,18 +40,20 @@
     <?php 
       foreach ($users as $user) {
         echo "
-        <div class='card bg-light text-white m-3' style='width: 15rem;height: 15rem;'>
-        <img src='./img/placeholder.jpg' class='card-img' alt='imagem default'>
-        <div class='card-img-overlay'>
-          <a class='title-card' tabindex='0' role='button' data-toggle='popover' data-trigger='focus' title='$user[name]' data-content='$user[email] | $user[course]'>
+        <a tabindex='0' role='button' data-toggle='popover' data-trigger='focus' title='$user[name]' data-content='And here's some amazing content. It's very engaging. Right?'>
+          <div class='card bg-light text-white m-3' style='width: 15rem;height: 15rem;'>
+          <img src='./img/placeholder.jpg' class='card-img' alt='imagem default'>
+          <div class='card-img-overlay'>
             <h5 class='card-title'>$user[name]</h5>
-          </a>  
-          <div class='card-text'>
-            <a class='title-card p-2' href='$user[linkedin]' alt='link linkedin' target='_blanck'><i class='fab fa-linkedin'></i></a>
-            <a class='title-card p-2' href='$user[github]' alt='link github' target='_blanck'><i class='fab fa-github'></i></a>
+            <p class='card-text'>$user[email]</p>
+            <p class='card-text'><i class='fas fa-university'></i> $user[course]</p>
+            <div class='card-text text-center'>
+              <a class='list-group-item-action text-white p-2' href='$user[linkedin]' alt='link linkedin' target='_blanck'><i class='fab fa-linkedin'></i></a>
+              <a class='list-group-item-action text-white p-2' href='$user[github]' alt='link github' target='_blanck'><i class='fab fa-github'></i></a>
+            </div>
           </div>
           </div>
-          </div>
+        </a>  
         ";
       }
     ?>

@@ -11,3 +11,13 @@
   font-size: 5em;
 }
 
+.title-card {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.title-card:hover {
+  text-decoration: none;
+  color: rgb(97, 96, 96);
+}

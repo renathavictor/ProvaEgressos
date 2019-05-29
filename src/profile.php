@@ -10,6 +10,16 @@
   $id = $_SESSION['id'];
   $name = $_SESSION['name'];
 
+  // cursos 
+
+  $sql = 'SELECT id, name FROM courses';
+
+  $statement = $pdo->prepare($sql);
+  $statement->execute();
+
+  $courses = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
   // procura os outros dados do usuario
   $sql = 'SELECT id, name, email, course, linkedin, github FROM users WHERE id = :id';
   $statement = $pdo->prepare($sql);
@@ -57,18 +67,28 @@
     <form method="post" action="" >
         <div class="form-row">
           <div class="col-md-6 mb-3">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="<?php echo $user['name'] ?>" >
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Nome" name="name" value="<?php echo $user['name'] ?>" >
           </div>
           <div class="col-md-6 mb-3">
             <label for="email">Email</label>
             <input type="text" class="form-control" id="email" placeholder="Email" name="email" value="<?php echo $user['email'] ?>">
           </div>
-          <div class="col-md-6 mb-3">
+          <!-- <div class="col-md-6 mb-3">
             <label for="course">Course</label>
             <input type="text" class="form-control" id="course" placeholder="Course" name="course" value="<?php echo $user['course'] ?>">
-          </div>
-          <div class="col-md-6 mb-3"></div>
+          </div> -->
+          <div class="col-md-8 mb-2">
+              <label for="course">Curso</label>
+              <select id="course" name="course">
+                <option>Escolha o seu curso</option>
+                <?php 
+                  foreach ($courses as $c) {
+                    echo "<option value='$c[name]'>$c[name]</option>";
+                  }
+                ?>
+              </select>
+            </div>
           <div class="col-md-6 mb-3">
             <label for="github">Github</label>
             <div class="input-group">
@@ -82,7 +102,7 @@
             </div>
           </div>
         </div>
-        <input type="submit" name="submit" value="Save edit" class="btn btn-success">
+        <input type="submit" name="submit" value="Salvar edição" class="btn btn-success">
       </form>
     </div>
   </div>

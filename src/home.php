@@ -21,7 +21,7 @@
       <a class="list-group-item-action" href="profile.php">
         <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title">Profile</h5>
+            <h5 class="card-title">Editar Perfil</h5>
             <i class="fas fa-user icons-home"></i>
           </div>
         </div>
@@ -32,7 +32,7 @@
       <a class="list-group-item-action" href="students.php">
         <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title">All users</h5>
+            <h5 class="card-title">Lista de egressos</h5>
             <i class="fas fa-users icons-home"></i>
           </div>
         </div>
