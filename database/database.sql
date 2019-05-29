@@ -1,3 +1,7 @@
+CREATE DATABASE `egressos`;
+USE `egressos`;
+
+
 CREATE TABLE users (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
   name VARCHAR(50) NOT NULL, 
